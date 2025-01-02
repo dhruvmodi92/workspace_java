@@ -1,0 +1,39 @@
+package org.dhruv;
+
+public class SynchronizedConcept {
+	public static void main(String args[])
+	{
+		Account a = new Account(50);
+		
+	}
+	
+	
+}
+
+class Account implements Runnable
+{
+	private int balance;
+	Account(int amount)
+	{
+		this.balance = amount;
+	}
+	
+	int getBalance()
+	{
+		return this.balance;
+	}
+	
+	void debit(int amount)
+	{
+		this.balance = this.balance - amount;
+		System.out.println("Debited by : "+Thread.currentThread().getName());
+	}
+	public void run()
+	{
+		if(this.getBalance() > 10)
+			this.debit(10);
+		else
+			System.out.println("");
+	}
+	
+}

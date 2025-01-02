@@ -1,0 +1,26 @@
+package org.dhruv.java8;
+
+import java.util.*;
+
+public class CalendarUtil {
+	public static void main(String[] args) {
+		System.out.println(Calendar.getAvailableCalendarTypes()+" "+Calendar.JANUARY);
+		
+		
+	}
+	
+	private int vacationWeeks(String firstDayOfYear,int year, String vacationStartMonth, String vacationEndMonth) {
+		int noOfWeeks = 0;
+		
+		Date date = new Date();
+		
+		
+		//valueOf("January");
+		//Date date = new GregorianCalendar(2014,Calendar.MONTH);
+				
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(date);
+		
+		return noOfWeeks;
+	}
+}

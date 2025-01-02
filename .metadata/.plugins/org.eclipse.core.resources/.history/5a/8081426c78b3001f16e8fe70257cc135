@@ -1,0 +1,93 @@
+package org.dhruv.java8;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class UdemyExercise {
+	public static void main(String[] args) {
+		
+		
+		Integer[] arr = new Integer[] {12,9,11,15,24,20,21,19};
+		List<Integer> list = Arrays.asList(arr);
+		
+		List<String> courses = List.of("Spring", "Spring Boot", "API" , "Microservices", "AWS", "PCF","Azure", "Docker", "Kubernetes");
+		
+		//print only odd numbers from the list
+		printAllOddNumbers(list);
+		
+		//print square of even numbers
+		printSquareOfEcvenNumbers(list);
+		
+		/*
+		 * Map<String,List<Integer>> map = new HashMap<>();
+		 * map.put("Dhruv",Arrays.asList(new Integer[] {12,9,11,15}));
+		 * map.put("Aneri",Arrays.asList(new Integer[] {12,9,11,15,21,}));
+		 * map.put("Deetya",list);
+		 * 
+		 * 
+		 * //find largest cube printLargestNumbersWithSum(map);
+		 */
+		
+		//Print Courses Containing the word "Spring"
+		printCoursesWithSpring(courses);
+		
+		//Print Courses Whose Name has atleast 4 letters
+		printCoursesWithMoreThan4Letters(courses);
+		
+		//Print the number of characters in each course name
+		printNoOfCharInEachCourse(courses);
+		
+		//Square every number in a list and find the sum of squares
+		findSumOfSquares(list);
+		
+	}
+	
+	private static void findSumOfSquares(List<Integer> list) {
+		// TODO Auto-generated method stub
+		System.out.println(list.stream().reduce(0,(x,y) -> x*x + y*y));
+	}
+
+	private static void printNoOfCharInEachCourse(List<String> courses) {
+		// TODO Auto-generated method stub
+		courses.stream()
+		.map(course -> course + " " + course.length()) 
+		.forEach(System.out::println);
+		
+	}
+
+	private static void printCoursesWithMoreThan4Letters(List<String> courses) {
+		// TODO Auto-generated method stub
+		courses.stream().filter(course -> course.length() >= 4).
+					forEach(System.out::println);
+	}
+
+	private static void printCoursesWithSpring(List<String> courses) {
+		// TODO Auto-generated method stub
+		courses.stream().filter(course -> course.contains("Spring")).
+				forEach(System.out::println);		
+	}
+
+	/*
+	 * private static void printLargestNumbersWithSum(Map<String, List<Integer>>
+	 * map) { // TODO Auto-generated method stub map.stream(). }
+	 */
+
+	private static void printSquareOfEcvenNumbers(List<Integer> list) {
+		// TODO Auto-generated method stub
+		list.stream().filter(num -> num % 2 == 0).
+						map(p -> p * p).
+						forEach(System.out::println);
+		
+	}
+
+	private static void printAllOddNumbers(List<Integer> numbers) {
+		numbers.stream().filter(num -> num % 2 != 0).
+			forEach(System.out::println);
+	}
+	
+	
+	
+}

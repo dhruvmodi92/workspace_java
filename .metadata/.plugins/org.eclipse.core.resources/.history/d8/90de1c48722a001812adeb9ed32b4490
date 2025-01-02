@@ -1,0 +1,28 @@
+package org.dhruv;
+
+public class SynchronizedConcept {
+	public static void main(String args[])
+	{
+		Account a = new Account(50);
+		
+	}
+}
+
+class Account
+{
+	private int balance;
+	Account(int amount)
+	{
+		this.balance = amount;
+	}
+	
+	int getBalance()
+	{
+		return this.balance;
+	}
+	
+	void debit(int amount)
+	{
+		this.balance = this.balance - amount;
+	}
+}

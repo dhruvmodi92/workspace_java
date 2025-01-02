@@ -1,0 +1,14 @@
+package org.dhruv;
+
+public class AmicableNumbers {
+	
+	public static void main(String args[]){
+		
+	}
+	
+	public int findAmicable(int number){
+		int count = 0;
+		
+	}
+
+}

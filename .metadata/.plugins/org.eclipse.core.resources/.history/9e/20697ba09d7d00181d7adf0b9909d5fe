@@ -1,0 +1,148 @@
+package org.dhruv;
+
+
+
+import java.util.HashMap;
+import java.util.LinkedList;
+
+public class LRUCache {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		LRU ca = new LRU(4);
+		ca.add(1);
+	    ca.add(2);
+	    ca.add(3);
+	    ca.add(1);
+	    ca.add(4);
+	    ca.add(5);
+	    
+	    ca.display();
+		
+		
+	}
+
+}
+
+
+class LRU
+{
+	int size;
+	
+	Node end;
+	Node prev = null;
+	Node next = null;
+	HashMap<Integer,Node> map = new HashMap<Integer,Node>();
+	LRU(int size){
+		this.size = size;
+	}
+	
+	void add(int val)
+	{
+		
+		if(map.size() < size)
+		{
+			Node node = map.get(val);
+			if(node == null)
+			{
+				
+				Node curr = new Node(val);
+				if(prev != null)
+					prev.prev = curr;
+				curr.next  = prev;
+				
+				
+				if(map.size() == 0)
+				{
+					end = curr;
+				}
+				map.put(val, curr);
+				prev = curr;
+			}
+			else
+			{
+				
+				remove(node);
+				map.remove(val);
+				
+				Node curr = new Node(val);
+				prev.prev = curr;
+				curr.next  = prev;
+				prev = curr;
+			}
+		}
+		else
+		{
+			Node node = map.get(val);
+			if(node == null)
+			{
+				
+				remove(end);
+				map.remove(val);
+				Node curr = new Node(val);
+				prev.prev = curr;
+				curr.next  = prev;
+				prev = curr;
+				
+			}
+			else
+			{
+				remove(node);
+				map.remove(val);
+				
+				Node curr = new Node(val);
+				prev.prev = curr;
+				curr.next  = prev;
+				prev = curr;
+			}
+		}
+		
+		
+	}
+	
+	
+	void remove(Node node)
+	{
+		Node prev = node.prev;
+		Node next = node.next;
+		
+		if(node == end)
+		{
+			prev.next = null;
+			end = prev;
+		}
+		prev.next = next;
+		if(next != null)
+		{
+			next.prev = prev;
+			map.put((int)next.data, next);
+		}
+		node = null;
+		
+		map.put((int)prev.data, prev);
+		
+	}
+	
+	void display()
+	{
+		Node n = prev;
+		while(n.next != null)
+		{
+			System.out.println(n.data);
+			n = n.next;
+		}
+	}
+}
+
+class Node
+{
+	Node prev;
+	Node next;
+	int data;
+	Node(int val)
+	{
+		this.data = val;
+		this.prev = null;
+		this.next = null;
+	}
+}

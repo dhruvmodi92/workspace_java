@@ -1,0 +1,42 @@
+package org.dhruv;
+
+public class SynchronizedConcept {
+	public static void main(String args[])
+	{
+		Account a = new Account(50);
+		Thread 
+	}
+	
+	
+}
+
+class Account implements Runnable
+{
+	private int balance;
+	Account(int amount)
+	{
+		this.balance = amount;
+	}
+	
+	int getBalance()
+	{
+		return this.balance;
+	}
+	
+	void debit(int amount)
+	{
+		this.balance = this.balance - amount;
+		System.out.println("Debited by : "+Thread.currentThread().getName());
+	}
+	public void run()
+	{
+		for(int i = 0;i < 4;i++)
+		{
+			if(this.getBalance() > 0)
+				this.debit(10);
+			else
+				System.out.println("Account is Overdrawn : "+Thread.currentThread().getName());
+		}
+	}
+	
+}

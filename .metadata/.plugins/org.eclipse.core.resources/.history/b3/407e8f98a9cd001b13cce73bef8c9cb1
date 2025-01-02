@@ -1,0 +1,79 @@
+package org.dhruv.java8;
+
+import java.time.LocalDate;
+import java.util.*;
+
+public class CalendarUtil {
+	public static void main(String[] args) {
+		System.out.println(Calendar.getAvailableCalendarTypes()+" "+Calendar.JANUARY);
+		System.out.println((CalendarUtil.Month.valueOf("APR")).noOfMonth);
+		System.out.println(LocalDate.of(2014, Month.APR.noOfMonth + 1, 1).getDayOfWeek());
+		//System.out.println(Calendar.get);
+		
+		Month startMonth = Month.getValue("April");
+		System.out.println(getFirstMonday(2014, startMonth.noOfMonth+1));
+		
+		
+		
+	}
+	
+	private int vacationWeeks(String firstDayOfYear,int year, String vacationStartMonth, String vacationEndMonth) {
+		int noOfWeeks = 0;
+		
+		Date date = new Date();
+		
+		
+		//valueOf("January");
+		//Date date = new GregorianCalendar(2014,Calendar.MONTH);
+				
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(date);
+		
+		return noOfWeeks;
+	}
+	
+	
+	public static int getFirstMonday(int year, int month) {
+		private static Calendar cacheCalendar = Calendar.getInstance();
+	    cacheCalendar.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
+	    cacheCalendar.set(Calendar.DAY_OF_WEEK_IN_MONTH, 1);
+	    cacheCalendar.set(Calendar.MONTH, month);
+	    cacheCalendar.set(Calendar.YEAR, year);
+	    return cacheCalendar.get(Calendar.DATE);
+	}
+	
+	private enum Month{
+		JAN("January",Calendar.JANUARY),
+		FEB("February",Calendar.FEBRUARY),
+		MAR("March",Calendar.MARCH),
+		APR("April",Calendar.APRIL),
+		MAY("May",Calendar.MAY),
+		JUN("June",Calendar.JUNE),
+		JUL("July",Calendar.JULY),
+		AUG("August",Calendar.AUGUST),
+		SEP("September",Calendar.SEPTEMBER),
+		OCT("October",Calendar.OCTOBER),
+		NOV("November",Calendar.NOVEMBER),
+		DEC("December",Calendar.DECEMBER);
+		
+		
+		public final String label;
+		public final int noOfMonth;
+		
+		private Month(String label,int noOfMonth) {
+			this.label=label;
+			this.noOfMonth = noOfMonth;
+		}
+		
+		private static Month getValue(String label) {
+			for(Month m : values()) {
+				if(m.label.equalsIgnoreCase(label))
+					return m;
+			}
+			return null;
+			
+		}
+	}
+}
+
+

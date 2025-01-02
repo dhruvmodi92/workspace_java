@@ -1,0 +1,56 @@
+package org.dhruv.java8;
+
+import java.time.LocalDate;
+import java.util.*;
+
+public class CalendarUtil {
+	public static void main(String[] args) {
+		System.out.println(Calendar.getAvailableCalendarTypes()+" "+Calendar.JANUARY);
+		System.out.println(LocalDate.);
+		
+		
+	}
+	
+	private int vacationWeeks(String firstDayOfYear,int year, String vacationStartMonth, String vacationEndMonth) {
+		int noOfWeeks = 0;
+		
+		Date date = new Date();
+		
+		
+		//valueOf("January");
+		//Date date = new GregorianCalendar(2014,Calendar.MONTH);
+				
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(date);
+		
+		return noOfWeeks;
+	}
+	
+	private enum Month{
+		JAN("January",Calendar.JANUARY),
+		FEB("February",Calendar.FEBRUARY),
+		MAR("March",Calendar.MARCH),
+		APR("April",Calendar.APRIL),
+		MAY("May",Calendar.MAY),
+		JUN("June",Calendar.JUNE),
+		JUL("July",Calendar.JULY),
+		AUG("August",Calendar.AUGUST),
+		SEP("September",Calendar.SEPTEMBER),
+		OCT("October",Calendar.OCTOBER),
+		NOV("November",Calendar.NOVEMBER),
+		DEC("December",Calendar.DECEMBER);
+		
+		
+		public final String name;
+		public final int noOfMonth;
+		
+		private Month(String name,int noOfMonth) {
+			this.name=name;
+			this.noOfMonth = noOfMonth;
+			
+		}
+		
+	}
+}
+
+

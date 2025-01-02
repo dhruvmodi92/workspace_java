@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;org.dhruv.HashMap.java&apos; to &apos;HashMapExample.java&apos;&#x0D;&#x0A;- Original project: &apos;Core_Java&apos;&#x0D;&#x0A;- Original element: &apos;org.dhruv.HashMap.java&apos;&#x0D;&#x0A;- Renamed element: &apos;org.dhruv.HashMapExample.java&apos;" description="Rename compilation unit &apos;HashMap.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;org.dhruv{HashMap.java" name="HashMapExample.java" references="false" stamp="1470485632716" version="1.0"/>
+</session>

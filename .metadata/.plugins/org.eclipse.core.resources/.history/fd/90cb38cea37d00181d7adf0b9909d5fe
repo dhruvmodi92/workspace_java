@@ -1,0 +1,75 @@
+
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+
+public class IteratorExample {
+
+	public static void main(String rgs[])
+	{
+		LinkedList<Integer> list = new LinkedList();
+		list.add(2);
+		list.add(12);
+		list.add(22);
+		list.add(32);
+		list.add(42);
+		list.add(52);
+		list.add(62);
+		list.add(72);
+		
+		
+		
+		Iterator itr = list.iterator();
+		while(itr.hasNext())
+		{
+			Integer i = (Integer)itr.next();
+			if(i == 32)
+				itr.remove();
+			
+		}
+		
+		System.out.println(list);
+		
+		LinkedList<Student> list1 = new LinkedList<Student>();
+		Student s1 = new Student(1,"Dhruv");
+		Student s2 = new Student(2 ," Aneri");
+		Student s3 = new Student(3,"Jinesh");
+		
+		list1.add(s1);
+		list1.add(s2);
+		list1.add(s3);
+		
+		
+		
+		
+		list1.remove(new Student(3,null));
+		
+		
+		System.out.println(list1);
+		
+		
+		
+	}
+}
+
+
+class Student
+{
+	int id;
+	String name;
+	
+	Student(int id,String name)
+	{
+		this.id = id;
+		this.name = name;
+	}
+	
+	public boolean equals(Object obj)
+	{
+		if(((Student)obj).id == this.id)
+			return true;
+		
+		return false;
+	}
+	
+}

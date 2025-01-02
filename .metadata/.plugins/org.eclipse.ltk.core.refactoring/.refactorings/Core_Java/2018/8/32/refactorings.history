@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;org.dhruv.java8.FunctionalInterface&apos; to &apos;FunctionInterfaceLambda&apos;&#x0D;&#x0A;- Original project: &apos;Core_Java&apos;&#x0D;&#x0A;- Original element: &apos;org.dhruv.java8.FunctionalInterface&apos;&#x0D;&#x0A;- Renamed element: &apos;org.dhruv.java8.FunctionInterfaceLambda&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;FunctionalInterface&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;org.dhruv.java8{FunctionalInterface.java[FunctionalInterface" matchStrategy="1" name="FunctionInterfaceLambda" qualified="false" references="true" similarDeclarations="false" stamp="1533752982728" textual="false" version="1.0"/>
+</session>

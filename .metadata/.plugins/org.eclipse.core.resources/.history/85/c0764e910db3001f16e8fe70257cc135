@@ -1,0 +1,25 @@
+package org.dhruv.java8;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class UdemyExercise {
+	public static void main(String[] args) {
+		
+		
+		Integer[] arr = new Integer[] {12,9,11,15,24,20,21,19};
+		List<Integer> list = Arrays.asList(arr);
+		
+		//print only odd numbers from the list
+		printAllOddNumbers(list);
+		
+		//
+	}
+	
+	private static void printAllOddNumbers(List<Integer> numbers) {
+		numbers.stream().filter(num -> num % 2 != 0).
+			forEach(System.out::println);
+	}
+	
+}

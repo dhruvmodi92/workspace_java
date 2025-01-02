@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;userName2&apos; from expression &apos;userName&apos;&#x0D;&#x0A;- Original project: &apos;Login_MVC&apos;&#x0D;&#x0A;- Variable name: &apos;userName2&apos;&#x0D;&#x0A;- Destination method: &apos;LoginServices.authenticateUserName()&apos;&#x0D;&#x0A;- Variable expression: &apos;userName&apos;&#x0D;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;userName2&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src&lt;{LoginServices.java" name="userName2" replace="true" selection="121 8" stamp="1460277209372" version="1.0"/>
+</session>
